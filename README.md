@@ -1,4 +1,4 @@
-# Smart-Bar-Clip
+# Smart-Bar-Clip README
 ##Contact
 Moose mrm815@nyu.edu
 
