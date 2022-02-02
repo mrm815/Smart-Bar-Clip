@@ -1,4 +1,4 @@
-# Smart-Bar-Clip
+# Smart-Bar-Clip READ
 ##Contact
 Moose mrm815@nyu.edu
 
