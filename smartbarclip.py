@@ -1,4 +1,6 @@
 import random
+Gyro_Address=0x53
+
 
 def setup():
     print("All peripherals and sensors have been set up")
