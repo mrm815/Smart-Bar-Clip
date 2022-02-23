@@ -1,4 +1,4 @@
-for setuptools import setup
+from setuptools import setup
 
 setup(name='smartbarclip',
       version='1.0',
