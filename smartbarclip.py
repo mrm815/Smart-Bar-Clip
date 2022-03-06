@@ -29,7 +29,7 @@ def gyro_y():
     print("Y: ",(gyro.raw_y)*ratio)
     
 def gyro_z():
-    print("Y: ",(gyro.raw_z)*ratio)
+    print("Z: ",(gyro.raw_z)*ratio)
 
 try:
     while True:
@@ -37,7 +37,7 @@ try:
         gyro_x()
         gyro_y()
         gyro_z()
-        time.sleep(0.2)
+        time.sleep(1)
 except KeyboardInterrupt:
     #GPIO.cleanup()
     sys.exit()
