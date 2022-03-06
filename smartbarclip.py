@@ -19,7 +19,7 @@ def buzzer_pulse():
     print("The buzzer is playing a pulsing tone")
 
 def gyro_x():
-    print(gyro.getX())
+    print(gyro.getX)
 
 try:
     while True:
