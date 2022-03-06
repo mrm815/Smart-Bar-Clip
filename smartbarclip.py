@@ -19,12 +19,13 @@ def buzzer_pulse():
     print("The buzzer is playing a pulsing tone")
 
 def gyro_x():
-    return random.randint(0,100)
+    print(gyro.getX())
 
 try:
     while True:
         print(gyro.acceleration)
         time.sleep(0.2)
+        gyro_x()
 except KeyboardInterrupt:
     GPIO.cleanup()
     sys.exit()
