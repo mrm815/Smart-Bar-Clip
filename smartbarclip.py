@@ -4,9 +4,13 @@ import busio
 import time
 import adafruit_adxl34x
 
-Gyro_Address=0x53
+#Gyro_Address=0x53
 i2c = board.I2C()
 gyro = adafruit_adxl34x.ADXL345(i2c)
+
+multi=0.004
+gravity=9.80665
+ratio=multi*gravity
 
 def setup():
     print("All peripherals and sensors have been set up")
@@ -19,13 +23,21 @@ def buzzer_pulse():
     print("The buzzer is playing a pulsing tone")
 
 def gyro_x():
-    print((gyro.raw_x)*.004*9.80665)
+    print("X: ",(gyro.raw_x)*ratio)
+
+def gyro_y():
+    print("Y: ",(gyro.raw_y)*ratio)
+    
+def gyro_z():
+    print("Y: ",(gyro.raw_z)*ratio)
 
 try:
     while True:
         #print(gyro.acceleration)
-        time.sleep(0.2)
         gyro_x()
+        gyro_y()
+        gyro_z()
+        time.sleep(0.2)
 except KeyboardInterrupt:
     #GPIO.cleanup()
     sys.exit()
