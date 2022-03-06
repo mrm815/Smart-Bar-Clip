@@ -1,6 +1,7 @@
 import random
 import board
 import busio
+import time
 import adafruit_adxl34x
 
 Gyro_Address=0x53
