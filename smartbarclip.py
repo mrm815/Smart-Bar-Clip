@@ -8,7 +8,7 @@ import sys
 
 GPIO.setmode(GPIO.BCM)
 pin=17
-GPIO.setup(GPIO.OUT)
+GPIO.setup(pin, GPIO.OUT)
 
 #Gyro_Address=0x53
 i2c = board.I2C()
