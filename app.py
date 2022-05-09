@@ -28,6 +28,13 @@ def home():
 def home_template():
   return render_template("index.html")
 
+@app.route("/templates/gyro")
+def gyro_template():
+  x=sbc.gyro_x()
+  y=sbc.gyro_y()
+  z=sbc.gyro_z()
+  return render_template("gyro.html",xlevel=x,ylevel=y,zlevel=z)
+
 
 
 if __name__ == "__main__":
