@@ -1,4 +1,5 @@
 import smartbarclip as sbc
+import time
 
 sbc.setup()
 
