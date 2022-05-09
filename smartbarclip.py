@@ -23,15 +23,15 @@ def buzzer_pulse():
     print("The buzzer is playing a pulsing tone")
 
 def gyro_x():
-    print("X: ",(gyro.raw_x)*ratio)
+    #print("X: ",(gyro.raw_x)*ratio)
     return ((gyro.raw_x)*ratio)
 
 def gyro_y():
-    print("Y: ",(gyro.raw_y)*ratio)
+    #print("Y: ",(gyro.raw_y)*ratio)
     return ((gyro.raw_y)*ratio)
     
 def gyro_z():
-    print("Z: ",(gyro.raw_z)*ratio)
+    #print("Z: ",(gyro.raw_z)*ratio)
     return ((gyro.raw_z)*ratio)
 
 
