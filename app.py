@@ -1,5 +1,7 @@
 import smartbarclip as sbc
 import time
+import RPi.GPIO as GPIO
+import sys
 
 
 sbc.setup()
@@ -19,8 +21,9 @@ try:
   while True:
     #print(sbc.gyro_x(),sbc.gyro_y(),sbc.gyro_z())
     #time.sleep(1)
-    dlift()
-    time.sleep(0.5)
+    #dlift()
+    #time.sleep(0.5)
+    sbc.buzzer_long()
 except KeyboardInterrupt:
   GPIO.cleanup()
   sys.exit()
