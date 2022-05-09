@@ -8,10 +8,10 @@ x_range=4
 y_range=4
 
 def dlift():
-  if ((-x_range)<sbc.gyro_x()<x_range):
+  if (not((-x_range)<sbc.gyro_x()<x_range)):
     print(" X Form error")
     sbc.buzzer_long()
-  if ((-y_range)<sbc.gyro_y()<y_range):
+  if (not((-y_range)<sbc.gyro_y()<y_range)):
     print("Y Form Error")
     sbc.buzzer_pulse()
     
