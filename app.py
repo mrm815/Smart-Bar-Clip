@@ -3,18 +3,18 @@ import time
 
 sbc.setup()
 
-x_range=20
-y_range=20
-z_range= 20
+x_range=4
+y_range=4
 
 def dlift():
-  if (((-z_range)<sbc.gyro_z()<z_range) or ((-y_range)<sbc.gyro_y()<y_range)):
+  if (((-x_range)<sbc.gyro_x()<x_range) or ((-y_range)<sbc.gyro_y()<y_range)):
     print("Form error")
     
 try:
   while True:
-    print(sbc.gyro_x(),sbc.gyro_y(),sbc.gyro_z())
-    time.sleep(1)
+    #print(sbc.gyro_x(),sbc.gyro_y(),sbc.gyro_z())
+    #time.sleep(1)
+    dlift()
 except KeyboardInterrupt:
   GPIO.cleanup()
   sys.exit()
