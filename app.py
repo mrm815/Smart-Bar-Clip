@@ -12,9 +12,8 @@ def dlift():
     
 try:
   while True:
-    sbc.gyro_x()
-    sbc.gyro_y()
-    sbc.gyro_z()
+    print(sbc.gyro_x(),sbc.gyro_y(),sbc.gyro_z())
+    time.sleep(1)
 except KeyboardInterrupt:
   GPIO.cleanup()
   sys.exit()
