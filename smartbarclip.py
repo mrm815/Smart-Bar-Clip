@@ -24,20 +24,14 @@ def buzzer_pulse():
 
 def gyro_x():
     print("X: ",(gyro.raw_x)*ratio)
+    return (gyro.raw_x)*ratio)
 
 def gyro_y():
     print("Y: ",(gyro.raw_y)*ratio)
+    return (gyro.raw_y)*ratio)
     
 def gyro_z():
     print("Z: ",(gyro.raw_z)*ratio)
+    return (gyro.raw_z)*ratio)
 
-try:
-    while True:
-        #print(gyro.acceleration)
-        gyro_x()
-        gyro_y()
-        gyro_z()
-        time.sleep(1)
-except KeyboardInterrupt:
-    #GPIO.cleanup()
-    sys.exit()
+
