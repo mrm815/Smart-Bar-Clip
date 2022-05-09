@@ -3,6 +3,12 @@ import board
 import busio
 import time
 import adafruit_adxl34x
+import RPi.GPIO as GPIO
+import sys
+
+GPIO.setmode(GPIO.BCM)
+pin=17
+GPIO.setup(GPIO.OUT)
 
 #Gyro_Address=0x53
 i2c = board.I2C()
