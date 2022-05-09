@@ -21,9 +21,8 @@ try:
   while True:
     #print(sbc.gyro_x(),sbc.gyro_y(),sbc.gyro_z())
     #time.sleep(1)
-    #dlift()
-    #time.sleep(0.5)
-    sbc.buzzer_long()
+    dlift()
+    time.sleep(0.5)
 except KeyboardInterrupt:
   GPIO.cleanup()
   sys.exit()
