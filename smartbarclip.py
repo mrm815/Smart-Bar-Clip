@@ -23,10 +23,18 @@ def setup():
     return True
 
 def buzzer_long():
-    print("The buzzer is playing a long tone")
+    GPIO.output(pin, GPIO.HIGH)
+    time.sleep(.4)
+    GPIO.output(pin, GPIO.LOW)
 
 def buzzer_pulse():
-    print("The buzzer is playing a pulsing tone")
+    GPIO.output(pin, GPIO.HIGH)
+    time.sleep(.2)
+    GPIO.output(pin, GPIO.LOW)
+    time.sleep(.1)
+    GPIO.output(pin, GPIO.HIGH)
+    time.sleep(.2)
+    GPIO.output(pin, GPIO.LOW)
 
 def gyro_x():
     #print("X: ",(gyro.raw_x)*ratio)
