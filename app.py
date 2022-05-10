@@ -52,9 +52,11 @@ def buzzer_template():
 
 @app.route("/buzzer/<int:action>")
 def buzzer_act(action):
+  global buzz
   if action==0:
     buzz="Armed"
     print("Buzzer is armed")
+    dlift()
   elif action==1:
     buzz="Inactive"
     print("Buzzer is not armed")
@@ -68,7 +70,7 @@ try:
     app.run(host='0.0.0.0',port=80,debug=True, threaded= True)
     #print(sbc.gyro_x(),sbc.gyro_y(),sbc.gyro_z())
     #time.sleep(1)
-    dlift()
+    #dlift()
     #time.sleep(0.5)
 except KeyboardInterrupt:
   GPIO.cleanup()
