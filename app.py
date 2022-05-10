@@ -53,13 +53,15 @@ def buzzer_template():
 @app.route("/buzzer/<int:action>")
 def buzzer_act(action):
   global buzz
+  t=0
   if action==0:
     buzz="Armed"
     print("Buzzer is armed")
-    while action==0:
+    while t<=15:
       dlift()
-      time.sleep(15)
-      action==1
+      time.sleep(1)
+      t+=1
+      
   elif action==1:
     buzz="Inactive"
     print("Buzzer is not armed")
