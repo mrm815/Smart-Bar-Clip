@@ -20,6 +20,9 @@ def dlift():
 
 app= Flask(__name__, static_folder='assets')
 
+global buzz
+buzz="Armed"
+
 @app.route("/")
 def home():
   return redirect("/templates/index")
@@ -35,7 +38,25 @@ def gyro_template():
   z=sbc.gyro_z()
   return render_template("gyro.html",xlevel=x,ylevel=y,zlevel=z)
 
+@app.route("/templates/buzzer")
+def buzzer_template():
+  if buzz=="Armed":
+    on="disabled"
+    off=""
+  elif buzz="Inactive":
+    on=""
+    off="disabled"
+  return render_template("buzzer.html",buzzerstatus=buzz, ondisabled=on, offdisabled=off)
 
+@app.route("/buzzer/<int:action>")
+def buzzer_act(action):
+  if action==0:
+    buzz="Armed"
+    print("Buzzer is armed")
+  elif action==1:
+    buzz="Inactive"
+    print("Buzzer is not armed")
+  return redirect("/templates/buzzer")
 
 if __name__ == "__main__":
   app.run(host='0.0.0.0',port=80,debug=True, threaded= True)
