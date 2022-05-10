@@ -58,6 +58,8 @@ def buzzer_act(action):
     print("Buzzer is armed")
     while action==0:
       dlift()
+      time.sleep(15)
+      action==1
   elif action==1:
     buzz="Inactive"
     print("Buzzer is not armed")
