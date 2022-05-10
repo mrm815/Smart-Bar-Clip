@@ -43,7 +43,7 @@ def buzzer_template():
   if buzz=="Armed":
     on="disabled"
     off=""
-  elif buzz="Inactive":
+  elif buzz=="Inactive":
     on=""
     off="disabled"
   return render_template("buzzer.html",buzzerstatus=buzz, ondisabled=on, offdisabled=off)
