@@ -21,7 +21,7 @@ def dlift():
 app= Flask(__name__, static_folder='assets')
 
 global buzz
-buzz="Armed"
+buzz=""
 
 @app.route("/")
 def home():
@@ -40,6 +40,8 @@ def gyro_template():
 
 @app.route("/templates/buzzer")
 def buzzer_template():
+  on=""
+  off=""
   if buzz=="Armed":
     on="disabled"
     off=""
@@ -58,15 +60,16 @@ def buzzer_act(action):
     print("Buzzer is not armed")
   return redirect("/templates/buzzer")
 
-if __name__ == "__main__":
+#if __name__ == "__main__":
   app.run(host='0.0.0.0',port=80,debug=True, threaded= True)
 
 try:
   while True:
+    app.run(host='0.0.0.0',port=80,debug=True, threaded= True)
     #print(sbc.gyro_x(),sbc.gyro_y(),sbc.gyro_z())
     #time.sleep(1)
     dlift()
-    time.sleep(0.5)
+    #time.sleep(0.5)
 except KeyboardInterrupt:
   GPIO.cleanup()
   sys.exit()
