@@ -27,7 +27,7 @@ buzz="Armed"
 def home():
   return redirect("/templates/index")
 
-@app.route("templates/index")
+@app.route("/templates/index")
 def home_template():
   return render_template("index.html")
 
