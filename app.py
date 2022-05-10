@@ -21,7 +21,7 @@ def dlift():
 app= Flask(__name__, static_folder='assets')
 
 global buzz
-buzz=""
+buzz="Unknown"
 
 @app.route("/")
 def home():
@@ -63,15 +63,15 @@ def buzzer_act(action):
   return redirect("/templates/buzzer")
 
 #if __name__ == "__main__":
-  app.run(host='0.0.0.0',port=80,debug=True, threaded= True)
+app.run(host='0.0.0.0',port=80,debug=True, threaded= True)
 
-try:
-  while True:
-    app.run(host='0.0.0.0',port=80,debug=True, threaded= True)
+#try:
+ # while True:
+  #  app.run(host='0.0.0.0',port=80,debug=True, threaded= True)
     #print(sbc.gyro_x(),sbc.gyro_y(),sbc.gyro_z())
     #time.sleep(1)
     #dlift()
     #time.sleep(0.5)
-except KeyboardInterrupt:
-  GPIO.cleanup()
-  sys.exit()
+#except KeyboardInterrupt:
+ # GPIO.cleanup()
+  #sys.exit()
